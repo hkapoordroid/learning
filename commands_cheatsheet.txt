@@ -1,0 +1,80 @@
+Git Cheat sheet 
+------------
+
+
+git --version
+
+git config --list 
+git config --global user.name "hkapoor"
+git config --global user.email "hkapoordroid@gmail.com"
+
+git <verb> --help
+git help <verb>
+
+Initiate repository for existing project
+1. Go to the directory which contains existing project
+2. git init (creates .git directory which contains everything needed by git for existing directory project)
+
+Check status of files within a directory 
+- git status 
+
+To ignore the files that should not be touched by git 
+1. touch .gitignore
+2. add files to the .gitignore files. It allows using wildcards as well. Just file name not the full path. 
+Note: allows .gitignore file to be commited to git so it knows which files to ignore always 
+
+Adding files to staging area
+1. git add -A (to add all files in the directory) or git add <filename> (to add files individually)
+2. git status 
+
+To remove files from staging area (revert the changes before committing)
+1. git reset (to revert all files from staging area) or git reset <filename> (to revert specific file from staging area)
+2. git status 
+
+
+To Commit the changes from staging area to remote repo
+1. git commit -m "<message>"
+2. git status 
+3. git log (shows the commmit that we just made along with the commit id)
+
+
+Cloning a remote repo to local 
+1. git clone <remote_repo_url> <local_dest>
+
+
+To view information about remote repo
+1. git remote -v 
+2. git branch -a (shows all branches, both local and remote)
+
+
+Committing changes made on local repo to remote repo
+1. git diff (shows changes made on local repo)
+2. git status 
+3. git add -A (or git Add <filename>)
+4. git commit -m "<message>"
+5. git pull <name_of_repo> <branch_name> (Example: git pull origin master)
+6. git push <name_of_repo> <branch_name> (Example: git push origin master)
+
+
+Create a new branch (to work for desired feature)
+1. git branch <new_branch_name>
+2. git checkout <new_branch_name>
+3  git status 
+4. git add -A 
+5. git push -u <repo_name> <new_branch_name> (Example: git push -u origin <new_branch_name>)
+6. git branch -a 
+
+
+Merging changes from particular branch to master 
+1. git checkout <master_branch_name> 
+2. git pull <repo_name> <master_branch_name> (Example: git pull origin master)
+3. git branch --merged (shows all the branches which have been merged so far)
+4. git merge <new_branch_name_to_merge>
+5. git push <repo_name> <branch_name> (Example: git push origin master)
+6. git branch --merged
+7. git branch -d <merged_branch_name> (This deletes the branch which has been merged locally. Example git branch -d <new_branch_which_was_merged>)
+8. git branch <repo_name> --delete <merged_Branch_name_to_delete> (This deletes the branch remotely. Example: git push origin --delete <new_branch_which_was_merged>)
+
+8. 
+
+
