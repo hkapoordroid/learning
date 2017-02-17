@@ -75,6 +75,10 @@ Merging changes from particular branch to master
 7. git branch -d <merged_branch_name> (This deletes the branch which has been merged locally. Example git branch -d <new_branch_which_was_merged>)
 8. git branch <repo_name> --delete <merged_Branch_name_to_delete> (This deletes the branch remotely. Example: git push origin --delete <new_branch_which_was_merged>)
 
-8. 
+
+
+git remote add origin https://github.com/hkapoordroid/learning.git
+git push -u origin master 
+git pull origin master 
 
 
